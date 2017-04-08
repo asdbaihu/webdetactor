@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="webdetactor-collector-zhihu" />
         <module name="webdetactor-core" />
+        <module name="webdetactor-data-elasticsearch" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="webdetactor" target="1.8" />
       <module name="webdetactor-collector-zhihu" target="1.8" />
       <module name="webdetactor-core" target="1.8" />
+      <module name="webdetactor-data-elasticsearch" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

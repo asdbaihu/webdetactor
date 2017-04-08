@@ -9,33 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>webdetactor-collector-zhihu</artifactId>
+    <artifactId>webdetactor-data-elasticsearch</artifactId>
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
         </dependency>
 
+        <!-- log -->
         <dependency>
-            <groupId>us.codecraft</groupId>
-            <artifactId>webmagic-core</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>us.codecraft</groupId>
-            <artifactId>webmagic-extension</artifactId>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>erinicv1</groupId>
-            <artifactId>webdetactor-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-        <groupId>erinicv1</groupId>
-        <artifactId>webdetactor-data-elasticsearch</artifactId>
-        <version>${project.version}</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
         </dependency>
     </dependencies>
 

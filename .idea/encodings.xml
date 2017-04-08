@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webdetactor-collector-zhihu" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webdetactor-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webdetactor-data-elasticsearch" charset="UTF-8" />
   </component>
 </project>

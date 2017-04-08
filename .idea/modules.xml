@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/webdetactor.iml" filepath="$PROJECT_DIR$/webdetactor.iml" />
       <module fileurl="file://$PROJECT_DIR$/webdetactor-collector-zhihu/webdetactor-collector-zhihu.iml" filepath="$PROJECT_DIR$/webdetactor-collector-zhihu/webdetactor-collector-zhihu.iml" />
       <module fileurl="file://$PROJECT_DIR$/webdetactor-core/webdetactor-core.iml" filepath="$PROJECT_DIR$/webdetactor-core/webdetactor-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webdetactor-data-elasticsearch/webdetactor-data-elasticsearch.iml" filepath="$PROJECT_DIR$/webdetactor-data-elasticsearch/webdetactor-data-elasticsearch.iml" />
     </modules>
   </component>
 </project>

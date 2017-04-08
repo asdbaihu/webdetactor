@@ -51,6 +51,7 @@
     <modules>
         <module>webdetactor-core</module>
         <module>webdetactor-collector-zhihu</module>
+        <module>webdetactor-data-elasticsearch</module>
         <!--<module>webporter-data-elasticsearch</module>-->
     </modules>
 
