@@ -39,4 +39,5 @@ public class ZhihuFolloweeDataProcessor implements DataProcessor<File,Document> 
 
         return documents;
     }
+
 }
