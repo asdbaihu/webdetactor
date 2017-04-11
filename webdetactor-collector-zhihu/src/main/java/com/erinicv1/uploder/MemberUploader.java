@@ -16,11 +16,12 @@ import java.util.concurrent.TimeUnit;
 public class MemberUploader {
 
     public static void upload(){
-        String index = "mzhihu";
-        String type = "memmber";
+        String index = "dezhihu";
+        String type = "member";
 
         ZhihuConfiguration configuration = new ZhihuConfiguration();
         ZhiHuFolloweeUploader outPipeline = new ZhiHuFolloweeUploader(index,type);
+
         outPipeline.setTimeOut(5, TimeUnit.MINUTES);
         DataProcessor<File,Document> processor = new ZhihuMemmberDataProcessor();
 

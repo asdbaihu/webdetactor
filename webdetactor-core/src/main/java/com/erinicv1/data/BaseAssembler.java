@@ -55,7 +55,7 @@ public class BaseAssembler<IN,OUT> {
 
     public void initComponent(){
         if (rawInput == null){
-            throw new RuntimeException("");
+            throw new RuntimeException(" can not found rawInput ");
         }
         if (countableThreadPool == null || countableThreadPool.isShutdown()){
             countableThreadPool = new CountableThreadPool(threadCount);
