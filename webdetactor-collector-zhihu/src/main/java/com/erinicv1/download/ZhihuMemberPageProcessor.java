@@ -56,15 +56,16 @@ public class ZhihuMemberPageProcessor implements PageProcessor {
         String path = configuration.getMemberPath();
 
         Spider spider = Spider.create(new ZhihuMemberPageProcessor())
-                .setScheduler(new FixedFileCacheQueueScheduler(path))
+                .setScheduler(new FixedFileCacheQueneScheduler2(path))
+                .set
                 .addPipeline(new ZhihuMemberPipeline(path))
                 .thread(20);
 
-        MemberUrlGenerator generator = new MemberUrlGenerator();
-
-        for (String token : generator.getUrlTokens()){
-            spider.addUrl(generatorUrl(token));
-        }
+//        MemberUrlGenerator generator = new MemberUrlGenerator();
+//
+//        for (String token : generator.getUrlTokens()){
+//            spider.addUrl(generatorUrl(token));
+//        }
 
         spider.run();
     }
