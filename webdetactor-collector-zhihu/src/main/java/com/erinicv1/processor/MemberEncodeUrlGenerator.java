@@ -21,7 +21,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -31,7 +30,6 @@ public class MemberEncodeUrlGenerator implements DataProcessor<File,String> {
 
     private static Logger logger = LoggerFactory.getLogger(MemberEncodeUrlGenerator.class);
 
-    private Set<String> encode_token = Sets.newSetFromMap(new ConcurrentHashMap<>());
 
     private final static String FILE_NAME = "urlEncode_token";
 
@@ -94,6 +92,8 @@ public class MemberEncodeUrlGenerator implements DataProcessor<File,String> {
             while ((s = reader.readLine()) != null) {
                 cursor.addAndGet(NumberUtils.toInt(s));
             }
+        }catch (FileNotFoundException e){
+            logger.warn(" file init start ");
         }catch (IOException e){
             logger.error(" read cursor fail: {}",e);
         }finally {
@@ -116,33 +116,15 @@ public class MemberEncodeUrlGenerator implements DataProcessor<File,String> {
         return null;
     }
 
-    public Set<String> extractUrlToken(String path){
+    public void extractUrlToken(String path){
         BaseAssembler.create(new FileRawInput(path),this)
                 .thread(20)
                 .run();
 
-        return encode_token;
     }
 
     public Set<String> getUrlTokens(){
         return getUrlTokens(FILE_PATH);
-    }
-
-    public void save(){
-        save(FILE_PATH);
-    }
-
-    private void save(String file){
-        PrintWriter reader = null;
-        try{
-            reader = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file),"UTF-8"));
-            for (String url : encode_token){
-                reader.println(url);
-            }
-            reader.close();
-        }catch (IOException e){
-            logger.error(" write file fail {}",e);
-        }
     }
 
     public Set<String> getUrlTokens(String path){
@@ -172,7 +154,6 @@ public class MemberEncodeUrlGenerator implements DataProcessor<File,String> {
         ZhihuConfiguration configuration = new ZhihuConfiguration();
         MemberEncodeUrlGenerator generator = new MemberEncodeUrlGenerator();
         generator.extractUrlToken(configuration.getFolloweeDataPath());
-//        generator.save();
         try{
             generator.close();
         }catch (IOException e){
